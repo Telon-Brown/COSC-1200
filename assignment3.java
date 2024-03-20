@@ -3,7 +3,6 @@ import java.util.Date;
 
 public class assignment3 {
 	private int vaccineID;
-	private int vaccineId;
     private String vaccineName;
     private double unitCost;
     private int quantityAvailable;
@@ -11,7 +10,7 @@ public class assignment3 {
     private String specialInstructions;
     
     public assignment3() {
-        this.vaccineId = 0;
+        this.vaccineID = 0;
         this.vaccineName = "Unknown";
         this.unitCost = 0.0;
         this.quantityAvailable = 0;
@@ -94,10 +93,8 @@ public class assignment3 {
             System.out.println("Special Instructions: " + specialInstructions);
         }
         
-
-	public static void main(String[] args) {
-		// Declaring Variables
-		int vacine_ID = "Vacine ID";
 		
 
 	}
+
+    }
