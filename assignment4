@@ -1,0 +1,85 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Product class
+class Product {
+    // Data members
+    private int sku;
+    private String productName;
+    private double unitCost;
+    private int quantityOnHand;
+    private int quantityNeeded;
+    private String specialInstructions;
+
+    // Constructors
+    public Product() {
+        // Default constructor with meaningful default values
+        this.sku = 0;
+        this.productName = "Unknown";
+        this.unitCost = 0.0;
+        this.quantityOnHand = 0;
+        this.quantityNeeded = 0;
+        this.specialInstructions = "None";
+    }
+
+    public Product(int sku, String productName, double unitCost, int quantityOnHand, int quantityNeeded, String specialInstructions) {
+        // Parameterized constructor
+        this.sku = sku;
+        this.productName = productName;
+        this.unitCost = unitCost;
+        this.quantityOnHand = quantityOnHand;
+        this.quantityNeeded = quantityNeeded;
+        this.specialInstructions = specialInstructions;
+    }
+
+    // Getters and setters (ensure they cannot be overridden)
+    public final int getSku() {
+        return sku;
+    }
+
+    // Other getters and setters
+
+    // Display function
+    public void display() {
+        // Display details of the product
+        System.out.println("SKU: " + sku);
+        System.out.println("Product Name: " + productName);
+        System.out.println("Unit Cost: $" + unitCost);
+        System.out.println("Quantity on hand: " + quantityOnHand);
+        System.out.println("Quantity Needed: " + quantityNeeded);
+        System.out.println("Special Instructions: " + specialInstructions);
+    }
+}
+
+// PerishableProduct class inheriting from Product
+class PerishableProduct extends Product {
+    // Private data member
+    private String expiryDate;
+
+    // Constructors
+    public PerishableProduct() {
+        // Default constructor
+        this.expiryDate = "Unknown";
+    }
+
+    public PerishableProduct(int sku, String productName, double unitCost, int quantityOnHand, int quantityNeeded, String specialInstructions, String expiryDate) {
+        // Overloaded constructor
+        super(sku, productName, unitCost, quantityOnHand, quantityNeeded, specialInstructions); // Call to base class constructor
+        this.expiryDate = expiryDate;
+    }
+
+    // Getter and setter for expiry date
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+
+    // Display function (overrides base class display function)
+    @Override
+    public void display() {
+        super.display(); // Call to base class display function
+        // Display expiry date
+        System.out.println("Expiry Date: " + expiryDate);
+    }
+}
+
+
